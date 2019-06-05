@@ -41,7 +41,7 @@ const filteredNames = filter(myNames, function(name) {
   return name[0] === 'R';
 });
 
-console.log(filteredNames) 
+// console.log(filteredNames); 
 // => ['Rich', 'Ray']
 // <---- DO NOT EDIT BETWEEN THESE LINES
 
@@ -55,9 +55,63 @@ function hazardWarningCreator(typeOfWarning) {
  
 }
 
-const rocksWarning = hazardWarningCreator('Rocks on the Road');
+// const rocksWarning = hazardWarningCreator('Rocks on the Road');
 
-rocksWarning('pizza parlor');
-rocksWarning('that one house');
-rocksWarning('your daddy\'s apartment');
+// rocksWarning('pizza parlor');
+// rocksWarning('that one house');
+// rocksWarning('your daddy\'s apartment');
 
+let turtleSteps = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
+// function forwardandLeft(value){
+//   return value[0] >= 0 && value[1] >= 0;
+// }
+
+// let turtleFiltered = turtleSteps.filter(forwardandLeft);
+
+// function mapping(step){
+//   return step[0] + step[1];
+// }
+
+// let turtleMap = turtleFiltered.map(mapping); 
+// console.log(turtleMap);
+
+
+// function stepCount(step,i){
+//   console.log(` Movement #${i + 1}: ${step} steps`);
+// }
+
+// turtleMap.forEach(stepCount);
+
+function filterOut(step) {
+  return step[0] >= 0 && step[1] >= 0;
+}
+let filtered = turtleSteps.filter(filterOut);
+console.log(filtered);
+
+function mapped(step){
+  return step[0] + step[1];
+}
+
+let mapping = filtered.map(mapped);
+console.log(mapping);
+
+function stepTracked(step, num) {
+  console.log(` Movement #${num + 1}: ${step} steps`);
+}
+
+mapping.forEach(stepTracked);
+
+
+let sentence = 'noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest'
+
+let arr = sentence.split(' ');
+function decodingString(arr) {
+  let accumulator = ''; 
+  if(arr.length === 3 ) {
+    accumulator += ' ';
+  } else {
+    accumulator = arr[-1].toUpperCase();
+  }
+  accumulator.split('');
+}
+decodingString.reduce();
