@@ -88,30 +88,22 @@ function filterOut(step) {
 let filtered = turtleSteps.filter(filterOut);
 console.log(filtered);
 
-function mapped(step){
-  return step[0] + step[1];
-}
+let filtering = turtleSteps.filter(step => step[0] > 0 && step[1] > 0);
+console.log(filtering);
 
-let mapping = filtered.map(mapped);
-console.log(mapping);
+// function mapped(step){
+//   return step[0] + step[1];
+// }
 
-function stepTracked(step, num) {
-  console.log(` Movement #${num + 1}: ${step} steps`);
-}
+// let mapping = filtered.map(mapped);
+// console.log(mapping);
 
-mapping.forEach(stepTracked);
+// function stepTracked(step, num) {
+//   console.log(` Movement #${num + 1}: ${step} steps`);
+// }
+
+// mapping.forEach(stepTracked);
 
 
 let sentence = 'noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest'
 
-let arr = sentence.split(' ');
-function decodingString(arr) {
-  let accumulator = ''; 
-  if(arr.length === 3 ) {
-    accumulator += ' ';
-  } else {
-    accumulator = arr[-1].toUpperCase();
-  }
-  accumulator.split('');
-}
-decodingString.reduce();
